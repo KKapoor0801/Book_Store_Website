@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const router = require("./routes/book-routes");
 const cors = require("cors");
 const app = express();
+const port = 5000;
 
 //Middlewares
 app.use(express.json());
@@ -17,3 +18,13 @@ mongoose.connect(
 }).catch((err) => console.log(err));
 
 // HaelTCfeKNC8nAZJ
+
+// port = process.env.PORT || port;
+
+// //for deployment
+// if(process.env.NODE_ENV === "production"){
+//     app.use(express.static("frontend/book-store/build"))
+//         // app.get("*",(req,res) => {
+//         //     res.sendFile(path.resolve(__dirname, 'frontend', 'book-store', 'build', 'index.html'));
+//         // });
+// }
